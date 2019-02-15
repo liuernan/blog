@@ -1,4 +1,4 @@
-[TOC]
+[Object-Oriented](#Object-Oriented)
 
 # Object-Oriented
 

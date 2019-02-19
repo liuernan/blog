@@ -69,3 +69,40 @@ let fab = (n) => {
 fab(5);
 fab(8);
 ```
+
+`this` & `arguments`
+---
+tips: chrome 的 console 显示的`Window{...}`实际是`window{...}`，`window`是小写
+
+`this`是`call`的第一个参数
+
+```javascript
+function fn () {
+    console.log(this);
+    console.log(arguments);
+}
+
+fn.call(); // window []
+fn.call({name: '二男'}); // {name: '二男'} []
+fn.call({name: '二男'}, 1, 'str') // {name: '二男'} [1, 'str']
+```
+
+推荐使用`call`的写法，而不要用 JS 的语法糖
+
+`call` & `apply`
+---
+参数长度未知的时候，`apply`应运而生
+```javascript
+function sum () {
+    var n = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        n += arguments[i];
+    }
+    return n
+}
+
+var arr = [1, 2, 3, 4, 5]
+// call 和 apply 的写法，第一个参数永远是this
+sum.apply(undefined, arr);
+sum.apply(null, [1, 2, 3]);
+```

@@ -106,3 +106,40 @@ var arr = [1, 2, 3, 4, 5]
 sum.apply(undefined, arr);
 sum.apply(null, [1, 2, 3]);
 ```
+
+bind
+---
+```javascript
+var view = {
+    element: $('#div1'),
+    bindEvents: function () {
+        this.element.onClick = this.onClick.bind(this);
+    },
+    onClick: function () {
+        this.element.addClass('active');
+    }
+}
+```
+
+参考 mdn 上的 bind
+
+柯里化
+---
+```javascript
+// 早期模版引擎的一种写法
+function templateHandler (template) {
+    return function (data) {
+       return template.replace('{{name}}', data.name);
+    }
+}
+
+var t = templateHandler('<p>Hi, my name is {{name}}</p>');
+
+t({name: 'Jack'});
+```
+
+高阶函数
+---
+函数的入参或出参是函数
+
+underscore.js

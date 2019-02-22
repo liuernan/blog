@@ -143,3 +143,9 @@ t({name: 'Jack'});
 函数的入参或出参是函数
 
 underscore.js
+
+构造函数（很无聊的概念）
+
+箭头函数
+---
+没有 `this` 的概念，没有 `arguments` 的概念

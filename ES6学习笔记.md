@@ -42,3 +42,34 @@ ES3 具名函数 & 匿名函数
 this 有什么问题？
 
 CoffeeScript && Ruby
+
+函数参数的默认值的语法糖
+---
+```javascript
+function sum (a = 0, b = 0) {
+    return a + b;
+}
+
+// 等价于ES5 ：
+function sumES5 (a, b) {
+    a = a || 0;
+    b = b || 0;
+    return a + b;
+}
+
+sum();
+```
+
+函数的剩余参数的语法糖
+---
+```javascript
+function sum (msg, ...numbers) {
+    var result = 0;
+    for (var i = 0; i < numbers.length; i++) {
+        result += numbers[i];
+    }
+    return msg + result;
+}
+
+sum('结果是', 1, 2, 3, 4, 5)
+```

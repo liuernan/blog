@@ -73,3 +73,54 @@ function sum (msg, ...numbers) {
 
 sum('结果是', 1, 2, 3, 4, 5)
 ```
+
+展开操作
+---
+```javascript
+var arr1 = [1, 2, 3, 4, 5, 6, 7];
+
+var [, , , ...arr2] = arr1;
+console.log(arr2); // [4, 5, 6, 7]
+
+var arr3 = [0, ...arr1, 8, 9];
+console.log(arr3); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+解构赋值
+```javascript
+var a = 1,
+    b = 2;
+// a b 的值位置互换
+[a, b] = [b, a];
+console.log(a, b); // [2, 1]
+
+// 取数组剩余的数据
+var [, , ...rest] = [1, 2, 3, 4, 5, 6, 7];
+console.log(rest); // [3, 4, 5, 6, 7]
+
+// 默认值 + 解构赋值
+var [a = 1, b = 2] = [0];
+console.log(a, b); // 0 2
+
+// 对象的解构赋值
+var {name, age, sex} = {name: 'Tom', age: 27, sex: 'Male'}
+console.log(name, age, sex); // Tom 27 Male
+
+// 对象的解构赋值 + 重命名
+var {name: XingMing, age: NianLing, sex: XingBie} = {name: 'Tom', age: 27, sex: 'Male'}
+console.log(XingMing, NianLing, XingBie); // Tom 27 Male
+console.log(name, age, sex); // 会报错，未定义，但是要注意 windown.name 是存在的
+
+
+// 对象的解构赋值加强版
+var {child: {name, age, gender}} = {name: 'Tom', age: 27, sex: 'Male', child: {name: 'Jerry', age: 2, sex: 'Female'}}
+console.log(name, age, sex); // Jerry 2 Male
+console.log(child); // 报错 child 不会被声明
+
+// 对象的解构赋值加强版 + 重命名 + 默认值
+var {child: {name: XingMing = 'noName', age: NianLing = -1, sex: XingBie = 'unknown'}} = {name: 'Tom', age: 27, sex: 'Male', child: {}}
+console.log(XingMing, NianLing, XingBie); // noName -1 unknown
+console.log(name, age, sex); // 会报错，未定义，但是要注意 windown.name 是存在的
+console.log(child); // 报错 child 不会被声明
+
+```

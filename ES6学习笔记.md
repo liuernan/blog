@@ -125,3 +125,61 @@ console.log(name, age, sex); // 会报错，未定义，但是要注意 windown.
 console.log(child); // 报错 child 不会被声明
 
 ```
+
+对象浅拷贝
+---
+```javascript
+var obj1 = {name: 'outName', innerObj: {innerName: 'innerName'}}
+
+var obj2 = Object.assign({}, obj1);
+console.log(obj2); // 拷贝了 obj1
+
+obj2.name = 'obj2OutName';
+obj2.innerObj.innerName = 'obj2InnerName';
+console.log(obj1.name); // outName
+console.log(obj1.innerObj.innerName); // obj2InnerName
+
+// ES6 的语法糖
+var obj3 = {...obj1}
+console.log(obj3);
+
+// 对象的合并
+var objA = {key1: 'a'}, objB = {key1: 'b'}
+
+var objC = Object.assign({}, objA, objB);
+console.log(objC); // {key1: 'b'}
+
+var objD = {...objA, ...objB};
+console.log(objD); // {key1: 'b'}
+```
+
+对象的深拷贝
+---
+* `JSON.parse(JSON.stringify(data));`
+* 递归
+
+对象的属性加强
+---
+```javascript
+var x = 1, y = 2;
+var obj = {x, y};
+console.log(obj);
+
+// 混合加强版
+var x = 1,
+    y = 2,
+    obj1 = {name: '绕晕了'}
+    
+var obj2 = {
+    x,
+    y,
+    z: 666,
+    ...obj1,
+    add: function () {},
+    sayName (name = 'noName') {console.log(name)}
+}
+console.log(obj2);
+obj2.sayName('PonyMa');
+obj2.satName();
+
+```

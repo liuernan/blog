@@ -183,3 +183,28 @@ obj2.sayName('PonyMa');
 obj2.satName();
 
 ```
+
+ES6 的字符串
+---
+```javascript
+var text = 'this is a text.';
+var str1 = `
+    <div>
+        <p>${text}</p>
+    </div>
+`  // 结果包含四个回车
+```
+
+函数后面直接跟一个模版字符串的写法
+---
+```javascript
+var name = '胖菊';
+var cat = '喵';
+function fn () {
+    console.log(arguments);
+}
+
+fn`${name} 是一只 ${cat}`
+```
+
+[styled-components](https://github.com/styled-components/styled-components)有用到

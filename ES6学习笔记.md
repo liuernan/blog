@@ -208,3 +208,62 @@ fn`${name} 是一只 ${cat}`
 ```
 
 [styled-components](https://github.com/styled-components/styled-components) 有用到
+
+
+字面量加强
+---
+literal
+
+```javascript
+// 以下都是字面量
+1 2 3 true false [] {}
+
+// 二进制、八进制的写法
+var num1 = 0b101010101;
+var num2 = 0o777;
+
+```
+
+字符串支持 unicode
+---
+[阮一峰的博客](http://www.ruanyifeng.com/blog/2014/12/unicode.html)
+
+新增的 `symbol` 数据类型
+---
+ES 5 的六种数据类型：string number boolean undefined null object
+
+复杂数据类型如 array function date regex 本质都是 object
+
+ES 6 新增的数据类型：symbol --- 胎记
+
+```javascript
+var gender = {
+    male: Symbol(),
+    female: Symbol(),
+    unknown: Symbol()
+}
+function choseGender (opts) {
+    if (opts === gender.male) {
+        console.log('a male')
+    } else if (opts === gender.female) {
+        console.log('a female')
+    } else if (opts === gender.unknown) {
+        console.log('an unknown body')
+    }
+}
+
+choseGender(gender.unknown);
+```
+
+迭代器 & 生成器 & 可迭代对象 & `for...of`
+---
+生成器是迭代器生层的语法糖
+
+`for...of` 是迭代器访问的语法糖
+
+`for...of` 和 `for...in`
+
+```javascript
+// 迭代器
+
+```

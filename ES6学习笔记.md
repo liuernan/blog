@@ -330,8 +330,44 @@ Object.defineProperty(window, 'a', {
 })
 ```
 
-对象的属性修饰符 `Object.defineProperty()`
----
-```javascript
+对象的属性修饰符 
 
+`Object.defineProperty()` 可以让对象的属性变成只读
+
+```javascript
+var obj = {
+    get name () {
+        return 'Jack';
+    }
+}
+
+// 另一种实现只读的办法，但是两者有区别
+Object.defineProperty(obj, 'name2', {
+    value: 'Tom',
+    writable: false
+})
+```
+
+Vue 实现双向绑定用到的一个重要的 API，也是不支持 IE 8 的原因：
+
+```javascript
+var obj = {
+    a: 1, 
+    b: 2, 
+    c: 3
+}
+Object.defineProperties(obj, {
+    'd': {
+        value: 4,
+        writable: false,
+        enumerable: false,  // 不可枚举，遍历对象时不会被遍历
+        configurable: true // 可再次修改这些配置
+    },
+    'e': {
+        value: 5,
+        writable: false,
+        enumerable: true,
+        configurable: false // 默认就是false，不可再次修改配置
+    }
+})
 ```

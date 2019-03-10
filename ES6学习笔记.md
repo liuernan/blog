@@ -267,3 +267,71 @@ choseGender(gender.unknown);
 // 迭代器
 
 ```
+
+对象的属性加强
+---
+```javascript
+// 生成空对象的三种方法：
+var obj1 = new Object(); // ES 5 生成一个空对象，但是有 __proto__
+
+var obj2 = Object.creat(null); // ES 6 写法，什么都没有
+var obj22 = Object.creat(Object.prototype); // ES 6 的写法，结果与 obj1 一致
+
+var obj3 = {}; // 字面量的写法，结果与 obj1 一致
+```
+
+对象属性相关的语法
+
+```javascript
+var a = 1,
+    b = 2,
+    name = 'useThisAsKey';
+
+var obj = {
+    a,
+    b,
+    [name]: 'test'
+}
+
+console.log(obj); // {a: 1, b: 2, useThisAsKey: "test"}
+```
+
+函数的 `get` 和 `set` 方法
+---
+```javascript
+var obj = {
+    _num: 1,
+    get age () {
+        return obj._num;
+    },
+    set age (value) {
+        if (value < 100) {
+            obj._num = value;
+        } else {
+            throw Error('Number must be less than 100!');
+        }
+    }
+}
+
+obj.age // 1
+obj.age = 18 // 18
+obj.age = 998 // Uncaught Error: Number must be less than 100!
+```
+
+面试题：让 `a === 1 && a === 2 && a === 3` 等于 `true`
+
+```javascript
+var i = 0;
+Object.defineProperty(window, 'a', {
+    get () {
+        i++;
+        return i;
+    }
+})
+```
+
+对象的属性修饰符 `Object.defineProperty()`
+---
+```javascript
+
+```

@@ -370,4 +370,13 @@ Object.defineProperties(obj, {
         configurable: false // 默认就是false，不可再次修改配置
     }
 })
+
+// 获取对象的属性的配置
+Object.getOwnPropertyDescriptor(obj, 'a');
+Object.getOwnPropertyDescriptors(obj);
+
+// 获取对象的属性的 key ,如果 key 是个 symbol ，要用另一个 API
+Object.getOwnPropertyNames(obj);
+Object.getOwnPropertySymbols(obj)
 ```
+

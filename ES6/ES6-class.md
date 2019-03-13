@@ -40,3 +40,25 @@ function creatPerson (name, age) {
 creatPerson('Jack', 99);
 ```
 
+原型 -> 构造函数 -> 类
+
+`class` 的语法
+---
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name || '无名氏',
+        this.age = age || 0
+    }
+    
+    walk() {
+        console.log('walking');
+    }
+}
+
+let p1 = new Person('Jack', 18);
+let p2 = new Person('Pony', 22);
+
+p1.walk === p2.walk; // true
+```
+

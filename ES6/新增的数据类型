@@ -1,1 +1,42 @@
+ES 6 之前已有的数据类型：String、Number、Boolean、undefined、null、object
 
+Array、function、Date 等都属于 Object
+
+ES 6 新增的数据类型：Symbol
+
+除了 Object 是复杂数据类型以外，其他的数据类型都是基本数据类型，Symbol 是一个基本数据类型
+
+ES 6 对于 Object 类型下新增的类型：Set/WeakSet、Map/WeakMap、TypedArray
+
+`Symbol`
+---
+```javascript
+// 每个从 Symbol() 返回的 Symbol 值都是唯一的
+let a = window.Symbol(); 
+let b = window.Symbol();
+
+a === b; // false
+a == b; // false
+
+// Symbol 可以作为一个对象的属性名
+let obj = new Object();
+obj[a] = 'aaaaa';
+
+// Symbol 可以传参数，参数只用于调试，没有代码执行意义
+Symbol('test') === Symbol('test'); // false
+```
+
+Symbol 的用途：实现对象的私有属性，ES 6 之前做不到隐藏，一般以 `_` 去开头来装作是私有属性
+
+```javascript
+// window 全局下可以访问到 obj，可以访问到 obj.name，但是访问不到 key 是 Symbol 的那个属性
+{
+    let symbol = Symbol();
+    let obj = {
+        name: 'Jack',
+        [a]: '隐藏属性'
+    }
+    obj[a] = '修改后的隐藏属性'; // 在代码块里面，可以访问到这个属性
+    window.testObj = obj;
+}
+```

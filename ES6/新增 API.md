@@ -174,3 +174,115 @@ console.log(arrVV.next().value); // 1
 console.log(arrVV.next().value); // 2
 console.log(arrVV.next().value); // 3
 ```
+
+String.prototype.includes
+---
+```javascript
+let strIncludes = '123456';
+
+strIncludes.includes('234'); // true
+
+// ES 5 的实现方法：
+strIncludes.indexOf('234') >=  0; // 根据索引判断
+strIncludes.search(/234/) >= 0; // search 可以使用正则
+```
+
+String.prototype.repeat
+---
+```javascript
+let strR = '12345';
+let strRR = strR.repeat(3);
+console.log(strRR); // '123451234512345'
+```
+
+String.prototype.startsWith
+---
+```javascript
+let strS = '12345';
+strS.startsWith('123'); // true
+
+// ES 5 的实现
+strS.indexOf('123') === 0; // true
+```
+
+String.prototype.endsWith
+---
+```javascript
+let strE = '12345';
+strE.endsWith('5'); // true
+strE.endsWith('45'); // true
+
+// ES 5 的实现
+strE.lastIndexOf('5') === strE.length - 1; // true
+strE.lastIndexOf('45') === strE.length - 2; // true
+```
+
+Number.EPSILON
+---
+1 和大于 1 的最小值的差值，是个常量
+
+有什么用？控制 JS 浮点数运算的最小误差
+
+Number.isInteger
+---
+判断是不是整数 `Number.isInteger(data)`
+
+ES 5 的实现方法：`data === parseInt(data, 10)`
+
+Number.isFinite
+---
+有限的数字
+
+```javascript
+Number.isFinite(Math.PI); // true
+Number.isFinite(Infinity); // false
+Number.isFinite(1 / 0); // false
+```
+
+Number.isNaN
+---
+`Number.isNaN(NaN); // true`
+
+NaN 是一个数字吗？
+
+[NaN（Not a Number，非数）是计算机科学中数值数据类型的一类值，表示未定义或不可表示的值。常在浮点数运算中使用。首次引入NaN的是1985年的IEEE 754浮点数标准。](https://zh.wikipedia.org/wiki/NaN)
+
+ES 5 实现判断是否是 NaN：
+```javascript
+function isNaN (n) {
+    return n !== n;
+}
+```
+
+现在 JS 有两个判断 NaN 的方法：
+```javascript
+window.isNaN('a'); // true  这个方法有毒
+Number.isNaN('a'); // false 这个比较靠谱
+```
+
+Math.acosh() 
+---
+反双曲余弦值
+
+Math.hypot() 
+---
+参数的平方和再开根号
+
+`Math.hypot(3, 4); // 5 勾股定理哈哈哈`
+
+Math.imul()
+---
+
+Math.sign() 
+---
+返回数字的符号 1正数 -1负数 0是0  -0是-0 NaN
+
+Math.trunc 去掉小数部分
+---
+parseInt 在处理极大或极小值的时候，有bug
+
+`parseInt(8888881181818181818181818.21313); // 8 JS 里面会把这个数表示成科学计数法 8.888e23，在 parseInt 的时候只看了8`
+
+`Math.trunc(8888881181818181818181818.21313)`
+
+parseInt 还有进制转换的坑

@@ -61,3 +61,5 @@ proxy.age = 18; // 看 console
 ```
 
 [无限代理（真杰宝腻害）](https://hacks.mozilla.org/2015/07/es6-in-depth-proxies-and-reflect/)
+
+Vue 将会用 Proxy 改写它的响应式逻辑，现在用的是 Object.defineProperty

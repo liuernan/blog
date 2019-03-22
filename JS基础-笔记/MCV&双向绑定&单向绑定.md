@@ -28,3 +28,30 @@ Vue 既实现了双向绑定，也实现了局部更新。Vue 的双向绑定思
 
 单向绑定其实是加了环节的半自动的双向绑定；双向绑定自己是全自动的双向绑定；
 
+面试：如何理解单向绑定？
+
+要点：1. 单向（Redux 单向数据流的思路）；2. Virtual DOM；
+
+面试：如何实现双向绑定？
+
+答：
+
+1. Dirty Check: AngularJS 1.x 提供的操作数据的 API 在调用完之后都会再调用一次 Render 去重新渲染页面
+
+2. Vue 使用ES 6 的新 API，监听到数据被修改
+```javascript
+Object.defineProperty(obj, key, {
+    get() {},
+    set(data) {}  // set 的时候增加监听
+})
+```
+有个 bug：如果在 data 初始化之后，再新增一个属性，Vue 会监听不到，因为已经初始化完了，没有给属性加监听，Vue 提供了一个 API：`this.$set(obj, key, value)`
+
+3. Proxy 
+```javascript
+let data = {}
+let dataProxy = new Proxy(data, {
+    get(target, key) {},
+    set(target, key, value) {} // 在这里监听更新UI
+})
+```

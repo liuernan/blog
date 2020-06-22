@@ -1,0 +1,9 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "ernan's blog",
+  "main": "index.js",
+  "repository": "git@github.com:liuernan/blog.git",
+  "author": "Jiawei <liujiaweidreamer@gmail.com>",
+  "license": "MIT"
+}

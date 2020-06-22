@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:liuernan/blog.git",
   "author": "Jiawei <liujiaweidreamer@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.2"
+  }
 }

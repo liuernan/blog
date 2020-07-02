@@ -20,7 +20,8 @@ module.exports = {
         title: '编程思想',
         collapsable: false,
         children: [
-          'thoughts/MVC.md'
+          'thoughts/mvc.md',
+          'thoughts/function.md'
         ]
       }
     ]

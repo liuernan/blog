@@ -14,14 +14,22 @@ module.exports = {
       {
         title: '编程语言',
         collapsable: false,
-        children: []
+        children: [
+          {
+            title: 'JavaScript',
+            collapsable: false,
+            children: [
+              'code/javascript/function.md',
+              'code/javascript/data-type.md'
+            ]
+          }
+        ]
       },
       {
         title: '编程思想',
         collapsable: false,
         children: [
-          'thoughts/mvc.md',
-          'thoughts/function.md'
+          'thoughts/mvc.md'
         ]
       }
     ]

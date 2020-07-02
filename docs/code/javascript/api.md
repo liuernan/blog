@@ -1,5 +1,7 @@
-Object.assign
----
+# new API in ES 6
+
+## Object.assign
+
 ```javascript
 let a = {a1: 1, a2: 2, a3: 3};
 let b = {a1: '1formB', b1: 1, b2: 2};
@@ -48,8 +50,10 @@ let obj1 = {a: 1};
 let obj2 = Object.assign({}, obj1);
 ```
 
-Array.from 把不是数组的东西（伪数组）变成数组
----
+## Array.from 
+
+把不是数组的东西（伪数组）变成数组
+
 ```javascript
 let fakeArr = {
     0: 'aaa',
@@ -104,15 +108,17 @@ console.log(creatArr2(7, 7));
 console.log(creatArr2(7, '7'));
 ```
 
-Array.of 得到一个由所有传参组成的数组，传参传什么都行
----
+## Array.of 
+
+得到一个由所有传参组成的数组，传参传什么都行
+
 ```javascript
 let arrOf = Array.of(1, '1', null, undefined, true, false, {},  Symbol());
 console.log(arrOf); // [1, "1", null, undefined, true, false, {}, Symbol()]
 ```
 
-Array.prototype.fill
----
+## Array.prototype.fill
+
 ```javascript
 let arrFill = [1, 2, 3, 4, 5];
 
@@ -121,16 +127,20 @@ arr.fill('fill', 1, 3); // 后面的参数是下标，包前不包后 [start, en
 console.log(arrFill); [1, 'fill', 'fill', 4, 5]
 ```
 
-Array.prototype.find 只接受函数为参数
----
+## Array.prototype.find 
+
+只接受函数为参数
+
 ```javascript
 let arrFind = [1, 2, 3, 4, 5];
 
 arrFind.find(v => v === 2); // 注意 find 与 filter 的区别
 ```
 
-Array.prototype.copyWithin 对自身进行浅拷贝覆盖
----
+## Array.prototype.copyWithin 
+
+对自身进行浅拷贝覆盖
+
 ```javascript
 let arrCopy = [1, 2, 3, 4, 5, 6];
 
@@ -139,8 +149,10 @@ arrCopy.copyWithin(0, 3, 6);
 console.log(a); // [4, 5, 6, 4, 5, 6]
 ```
 
-Array.prototype.entries 返回一个可迭代对象
----
+## Array.prototype.entries 
+
+返回一个可迭代对象
+
 ```javascript
 let arrE = [1, 2, 3, 4, 5];
 
@@ -151,8 +163,10 @@ console.log(arrEE.next().value); // [1, 2]
 console.log(arrEE.next().value); // [2, 3]
 ```
 
-Array.prototype.keys 返回一个可迭代对象
----
+## Array.prototype.keys 
+
+返回一个可迭代对象
+
 ```javascript
 let arrK = [1, 2, 3, 4, 5];
 
@@ -163,8 +177,10 @@ console.log(arrKK.next().value); // 1
 console.log(arrKK.next().value); // 2
 ```
 
-Array.prototype.values 返回一个可迭代对象
----
+## Array.prototype.values 
+
+返回一个可迭代对象
+
 ```javascript
 let arrV = [1, 2, 3, 4, 5];
 
@@ -175,8 +191,8 @@ console.log(arrVV.next().value); // 2
 console.log(arrVV.next().value); // 3
 ```
 
-String.prototype.includes
----
+## String.prototype.includes
+
 ```javascript
 let strIncludes = '123456';
 
@@ -187,16 +203,16 @@ strIncludes.indexOf('234') >=  0; // 根据索引判断
 strIncludes.search(/234/) >= 0; // search 可以使用正则
 ```
 
-String.prototype.repeat
----
+## String.prototype.repeat
+
 ```javascript
 let strR = '12345';
 let strRR = strR.repeat(3);
 console.log(strRR); // '123451234512345'
 ```
 
-String.prototype.startsWith
----
+## String.prototype.startsWith
+
 ```javascript
 let strS = '12345';
 strS.startsWith('123'); // true
@@ -205,8 +221,8 @@ strS.startsWith('123'); // true
 strS.indexOf('123') === 0; // true
 ```
 
-String.prototype.endsWith
----
+## String.prototype.endsWith
+
 ```javascript
 let strE = '12345';
 strE.endsWith('5'); // true
@@ -217,20 +233,20 @@ strE.lastIndexOf('5') === strE.length - 1; // true
 strE.lastIndexOf('45') === strE.length - 2; // true
 ```
 
-Number.EPSILON
----
+## Number.EPSILON
+
 1 和大于 1 的最小值的差值，是个常量
 
 有什么用？控制 JS 浮点数运算的最小误差
 
-Number.isInteger
----
+## Number.isInteger
+
 判断是不是整数 `Number.isInteger(data)`
 
 ES 5 的实现方法：`data === parseInt(data, 10)`
 
-Number.isFinite
----
+## Number.isFinite
+
 有限的数字
 
 ```javascript
@@ -239,8 +255,8 @@ Number.isFinite(Infinity); // false
 Number.isFinite(1 / 0); // false
 ```
 
-Number.isNaN
----
+## Number.isNaN
+
 `Number.isNaN(NaN); // true`
 
 NaN 是一个数字吗？
@@ -260,25 +276,25 @@ window.isNaN('a'); // true  这个方法有毒
 Number.isNaN('a'); // false 这个比较靠谱
 ```
 
-Math.acosh() 
----
+## Math.acosh() 
+
 反双曲余弦值
 
-Math.hypot() 
----
+## Math.hypot() 
+
 参数的平方和再开根号
 
 `Math.hypot(3, 4); // 5 勾股定理哈哈哈`
 
-Math.imul()
----
+## Math.imul()
 
-Math.sign() 
----
+
+## Math.sign() 
+
 返回数字的符号 1正数 -1负数 0是0  -0是-0 NaN
 
-Math.trunc 去掉小数部分
----
+## Math.trunc 去掉小数部分
+
 parseInt 在处理极大或极小值的时候，有bug
 
 `parseInt(8888881181818181818181818.21313); // 8 JS 里面会把这个数表示成科学计数法 8.888e23，在 parseInt 的时候只看了8`

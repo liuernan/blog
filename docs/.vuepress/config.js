@@ -20,7 +20,8 @@ module.exports = {
             collapsable: false,
             children: [
               'code/javascript/function.md',
-              'code/javascript/data-type.md'
+              'code/javascript/data-type.md',
+              'code/javascript/api.md',
             ]
           }
         ]

@@ -1,5 +1,7 @@
-JavaScript 的历史
----
+# Class
+
+## JavaScript 的历史
+
 1995年，Branden Eich，网景，Navigator，IE
 
 《Code Rush》纪录片，Navigator, open source, Firefox, Mozilla
@@ -10,8 +12,8 @@ Branden Eich, CEO, one week
 
 ES 6 之前，class 是一个保留字，通过原型来实现了类
 
-原型 -> 原型链
----
+## 原型 -> 原型链
+
 当我们写一句 `var obj = {}` 时，我们到底写了什么？
 
 变量是变量，对象是对象，变量实际存的是对象在内存中的一个地址
@@ -42,8 +44,8 @@ creatPerson('Jack', 99);
 
 原型 -> 构造函数 -> 类
 
-`class` 的语法
----
+## `class` 的语法
+
 ```javascript
 class Animal {
     constructor() {

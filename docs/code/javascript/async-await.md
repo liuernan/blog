@@ -1,3 +1,5 @@
+# async await
+
 和 Promise 结合在一起用，使得异步函数更像是一个同步函数
 
 ```javascript

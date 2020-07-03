@@ -19,9 +19,10 @@ module.exports = {
             title: 'JavaScript',
             collapsable: false,
             children: [
-              'code/javascript/function.md',
               'code/javascript/data-type.md',
-              'code/javascript/api.md',
+              'code/javascript/function.md',
+              'code/javascript/async-await.md',
+              'code/javascript/api.md'
             ]
           }
         ]

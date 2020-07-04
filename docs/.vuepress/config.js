@@ -21,6 +21,7 @@ module.exports = {
             children: [
               'code/javascript/data-type.md',
               'code/javascript/function.md',
+              'code/javascript/promise.md',
               'code/javascript/async-await.md',
               'code/javascript/class.md',
               'code/javascript/module.md',

@@ -23,6 +23,7 @@ module.exports = {
               'code/javascript/function.md',
               'code/javascript/async-await.md',
               'code/javascript/class.md',
+              'code/javascript/module.md',
               'code/javascript/api.md'
             ]
           }

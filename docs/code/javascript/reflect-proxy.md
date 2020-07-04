@@ -1,5 +1,7 @@
-Reflect
----
+# Reflect Proxy
+
+## Reflect
+
 Reflect -> Proxy -> Node.js 
 
 Reflect 反射、映射
@@ -34,8 +36,8 @@ min(3, 4, 2, 1);
 
 API 基本上和 Object 的 API 的功能一样
 
-Proxy
----
+## Proxy
+
 什么是代理？
 
 代理有什么用？

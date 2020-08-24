@@ -12,6 +12,13 @@ module.exports = {
     ],
     sidebar: [
       {
+        title: '面试题',
+        collapsable: false,
+        children: [
+          'interview/array-uniq.md'
+        ]
+      },
+      {
         title: '编程语言',
         collapsable: false,
         children: [

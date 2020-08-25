@@ -15,7 +15,8 @@ module.exports = {
         title: '面试题',
         collapsable: false,
         children: [
-          'interview/array-uniq.md'
+          'interview/array-uniq.md',
+          'interview/vertical-align-middle.md'
         ]
       },
       {

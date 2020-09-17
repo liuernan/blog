@@ -12,7 +12,7 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: '面试题',
+        title: '面试',
         collapsable: false,
         children: [
           'interview/array-unique.md',
@@ -20,7 +20,7 @@ module.exports = {
         ]
       },
       {
-        title: '编程语言',
+        title: '笔记',
         collapsable: false,
         children: [
           {
@@ -36,14 +36,21 @@ module.exports = {
               'code/javascript/module.md',
               'code/javascript/api.md'
             ]
+          },
+          {
+            title: 'Express',
+            // collapsable: false,
+            children: [
+              'code/express/start.md'
+            ]
+          },
+          {
+            title: '设计模式',
+            // collapsable: false,
+            children: [
+              'code/thoughts/mvc.md'
+            ]
           }
-        ]
-      },
-      {
-        title: '编程思想',
-        collapsable: false,
-        children: [
-          'thoughts/mvc.md'
         ]
       }
     ]

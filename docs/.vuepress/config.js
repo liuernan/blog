@@ -1,6 +1,6 @@
 module.exports = {
   title: '二男的博客',
-  description: '编程语言 编程思想',
+  description: '学习笔记 面试题',
   base: '/blog/',
   cache: false,
   themeConfig: {

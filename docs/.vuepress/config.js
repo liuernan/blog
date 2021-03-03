@@ -16,7 +16,8 @@ module.exports = {
         collapsable: false,
         children: [
           'interview/array-unique.md',
-          'interview/vertical-align-middle.md'
+          'interview/vertical-align-middle.md',
+          'interview/brackets-correctly-closed.md'
         ]
       },
       {

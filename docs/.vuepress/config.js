@@ -17,7 +17,8 @@ module.exports = {
         children: [
           'interview/array-unique.md',
           'interview/vertical-align-middle.md',
-          'interview/brackets-correctly-closed.md'
+          'interview/brackets-correctly-closed.md',
+          'interview/lazyman.md'
         ]
       },
       {

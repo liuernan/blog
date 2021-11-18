@@ -18,7 +18,8 @@ module.exports = {
           'interview/array-unique.md',
           'interview/vertical-align-middle.md',
           'interview/brackets-correctly-closed.md',
-          'interview/lazyman.md'
+          'interview/lazyman.md',
+          'interview/promise.md'
         ]
       },
       {

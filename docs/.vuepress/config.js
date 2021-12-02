@@ -19,7 +19,8 @@ module.exports = {
           'interview/vertical-align-middle.md',
           'interview/brackets-correctly-closed.md',
           'interview/lazyman.md',
-          'interview/promise.md'
+          'interview/promise.md',
+          'interview/bind.md'
         ]
       },
       {
